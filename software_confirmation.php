@@ -5,7 +5,6 @@ $nid = arg(1);
 $sid = $_GET['sid'];
 
 $submission = webform_get_submission($nid, $sid);
-$software = $submission->data[5]['value'][0];
 $swname = $submission->data[7]['value'][0];
 $version = $submission->data[8]['value'][0];
 $language = $submission->data[9]['value'][0];
@@ -31,10 +30,8 @@ if($swname == 'TEISER') {
   $uni = 'ac2248';
 } else if($swname == 'HERMES') {
   $uni = 'ac2248';
-} else if($software == "node/44/?software=ARACNE") {
-  $uni = 'ac2248';
-} else if($software == "node/44/?software=HERMES") {
-  $uni = 'ac2248';
+} else if($swname == 'geWorkbench') {
+  $uni = 'af2202';
 }
 
 // the returned value should be one
@@ -108,10 +105,20 @@ header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/5/5c/Viper_0
 header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE/aracne.zip' ); 
 } else if($swname == 'HERMES') {
 header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
-} else if($software == "node/44/?software=ARACNE") {
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/index.php/Software/ARACNE' ); 
-} else if($software == "node/44/?software=HERMES"){
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
+} else if($swname == 'geWorkbench') {
+    if($platform == 'Windows') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Windows_installer_noJRE.exe' );
+    } else if ($platform == 'Windows_with_JRE') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Windows_installer_with_JRE6.exe' );
+    } else if($platform == 'Linux') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Linux_installer_noJRE.bin' );
+    } else if ($platform == 'Linux_with_JRE') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Linux_installer_with_JRE6.bin' );
+    } else if($platform == 'MacOSX') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_MacOSX_installer.zip' ); 
+    } else {
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Generic.zip' ); 
+    }
 } else {
 header( 'Location: http://magnet.c2b2.columbia.edu/'); 
 }
