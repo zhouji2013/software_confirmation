@@ -106,18 +106,22 @@ header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE/ara
 } else if($swname == 'HERMES') {
 header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
 } else if($swname == 'geWorkbench') {
+    $ver = '2.4.1';
+    if($version!=null) {
+        $ver = $version;
+    }
     if($platform == 'Windows') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Windows_installer_noJRE.exe' );
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_Windows_installer_noJRE.exe' );
     } else if ($platform == 'Windows_with_JRE') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Windows_installer_with_JRE6.exe' );
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_Windows_installer_with_JRE6.exe' );
     } else if($platform == 'Linux') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Linux_installer_noJRE.bin' );
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_Linux_installer_noJRE.bin' );
     } else if ($platform == 'Linux_with_JRE') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Linux_installer_with_JRE6.bin' );
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_Linux_installer_with_JRE6.bin' );
     } else if($platform == 'MacOSX') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_MacOSX_installer.zip' ); 
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_MacOSX_installer.zip' ); 
     } else {
-        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v2.4.1_Generic.zip' ); 
+        header( 'Location: http://wiki.c2b2.columbia.edu/workbench/data/geWorkbench_v'.$ver.'_Generic.zip' ); 
     }
 } else {
 header( 'Location: http://magnet.c2b2.columbia.edu/'); 
