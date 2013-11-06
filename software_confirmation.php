@@ -107,17 +107,17 @@ header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE/ara
 header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
 } else if($swname == 'geWorkbench') {
     if($platform == 'Windows') {
-        header( 'Location: https://www.dropbox.com/s/nddcr67co13ke0a/geWorkbench_v2.5.1_Windows_installer_noJRE.exe' );
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Windows_installer_noJRE.exe' );
     } else if ($platform == 'Windows_with_JRE') {
-        header( 'Location: https://www.dropbox.com/s/bm4teznq14n2ew7/geWorkbench_v2.5.1_Windows_installer_with_JRE6.exe' );
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Windows_installer_with_JRE6.exe' );
     } else if($platform == 'Linux') {
-        header( 'Location: https://www.dropbox.com/s/rjjvswolsz6jops/geWorkbench_v2.5.1_Linux_installer_noJRE.bin' );
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Linux_installer_noJRE.bin' );
     } else if ($platform == 'Linux_with_JRE') {
-        header( 'Location: https://www.dropbox.com/s/jx3hvj534hrg933/geWorkbench_v2.5.1_Linux_installer_with_JRE6.bin' );
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Linux_installer_with_JRE6.bin' );
     } else if($platform == 'MacOSX') {
-        header( 'Location: https://www.dropbox.com/s/msgvuckwf973p15/geWorkbench_v2.5.1_MacOSX_installer.zip' ); 
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_MacOSX_installer.zip' ); 
     } else {
-        header( 'Location: https://www.dropbox.com/s/bqf3xouxwsdi4hs/geWorkbench_v2.5.1_Generic.zip' ); 
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Generic.zip' ); 
     }
 } else {
 header( 'Location: http://magnet.c2b2.columbia.edu/'); 
