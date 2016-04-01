@@ -104,21 +104,27 @@ header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/5/5c/Viper_0
 } else if($swname == 'ARACNE GUI') {
 header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE/aracne.zip' ); 
 } else if($swname == 'HERMES') {
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
-} else if($swname == 'geWorkbench') {
-    if($platform == 'Windows') {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Windows_installer_noJRE.exe' );
-    } else if ($platform == 'Windows_with_JRE') {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Windows_installer_with_JRE6.exe' );
-    } else if($platform == 'Linux') {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Linux_installer_noJRE.bin' );
-    } else if ($platform == 'Linux_with_JRE') {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Linux_installer_with_JRE6.bin' );
-    } else if($platform == 'MacOSX') {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_MacOSX_installer.zip' ); 
-    } else {
-        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.5.1/geWorkbench_v2.5.1_Generic.zip' ); 
+    if($version == '1'){
+	header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
+    } else if ($version == '2'){
+    	header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/HERMES/Hermes-v2.0.tar.gz' ); 
     }
+} else if($swname == 'geWorkbench') {
+    if($platform == 'Windows_x64') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Windows_JRE7_x64.exe' );
+    } else if ($platform == 'Windows_x86') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Windows_JRE7_x86.exe' );
+    } else if ($platform == 'Windows_noJRE') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Windows_noJRE.exe' );
+    } else if($platform == 'Linux_noJRE') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Linux_noJRE.bin' );
+    } else if ($platform == 'Linux_x64') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Linux_JRE7_x64.bin' );
+    } else if($platform == 'MacOSX_x64') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_MacOSX_JRE7_x64.zip' ); 
+    } else if($platform == 'Generic') {
+        header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Generic.zip' ); 
+    } 
 } else {
 header( 'Location: http://magnet.c2b2.columbia.edu/'); 
 }
