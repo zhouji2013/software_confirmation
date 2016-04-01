@@ -11,24 +11,10 @@ $language = $submission->data[9]['value'][0];
 $platform = $submission->data[10]['value'][0];
 $uni = '';
 
-if($swname == 'TEISER') {
+if($swname == 'TEISER' || $swname == 'FIRE' || $swname == 'iPAGE' || $swname == 'FIRE-pro' || $swname == 'EVE') {
   $uni = 'st2744';
-} else if($swname == 'FIRE') {
-  $uni = 'st2744';
-} else if($swname == 'iPAGE') {
-  $uni = 'st2744';
-} else if($swname == 'FIRE-pro') {
-  $uni = 'st2744';
-} else if($swname == 'EVE') {
-  $uni = 'st2744';
-} else if($swname == 'ARACNE' || $swname == 'SPLASH' || $swname == 'MINDY' || $swname == 'BCI' || $swname == 'CLEANER'
- || $swname == 'VIPER') {
-  $uni = 'ac2248';
-} else if($swname == 'ARACNE SOURCE') {
-  $uni = 'ac2248';
-} else if($swname == 'ARACNE GUI') {
-  $uni = 'ac2248';
-} else if($swname == 'HERMES') {
+} else if($swname == 'ARACNE' || $swname =='BCI' || $swname =='Biastools' || $swname == 'Cleaner' || $swname == 'DEMAND'
+    || $swname == 'HERMES' || $swname == 'MARINA' || $swname == 'MINDY' || $swname == 'SPLASH' || $swname == 'VIPER') {
   $uni = 'ac2248';
 } else if($swname == 'geWorkbench') {
   $uni = 'af2202';
@@ -48,67 +34,73 @@ header( 'Location: https://tavazoielab.c2b2.columbia.edu/FIRE-pro/download/FIREp
 } else if($swname == 'EVE') {
 header( 'Location: https://tavazoielab.c2b2.columbia.edu/EVE/EVE.zip' ); 
 } else if($swname == 'BCI') {
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/BCI.txt' ); 
+    header( 'Location: https://califano.squarespace.com/s/BCI.txt' );
+} else if($swname == 'Biastools') {
+    header( 'Location: https://califano.squarespace.com/s/Biastools.txt' );
 } else if($swname == 'VIPER') {
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/5/5c/Viper_0.99.0.tar.gz' ); 
+header( 'Location: https://califano.squarespace.com/s/Viper_0990tar.gz' ); 
 } else if($swname == 'MINDY') {
     if($platform == 'Linux') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/MINDY2/MINDY2_C++.tar.gz' ); 
+        header( 'Location: https://califano.squarespace.com/s/MINDY2_Ctar.gz' ); 
     } else {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/MINDY2/MINDY2_MATLAB.tar.gz' ); 
+        header( 'Location: https://califano.squarespace.com/s/MINDY2_MATLABtar.gz' ); 
     }
 } else if($swname == 'SPLASH') {
     if($platform == 'Windows') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/splash/splash.exe' ); 
+        header( 'Location: https://califano.squarespace.com/s/splash.exe' ); 
     } else if($platform == 'Linux') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/splash/splash' ); 
+        header( 'Location: https://califano.squarespace.com/s/splash' );
     }
-} else if($swname == 'CLEANER') {
+} else if($swname == 'Cleaner') {
     if($platform == 'Windows') {
 		if($version == '1.03') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/e/ed/Cleaner103.zip' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner103.zip' );
 		} else if($version == '1.02') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/ca/Cleaner102.zip' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner102.zip' );
 		} else if($version == '1.01') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/d/d3/Cleaner101.zip' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner101.zip' );
 		} else {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/1/18/Cleaner.zip' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner.zip' );
 		}
     } else if($platform == 'Linux') {
 		if($version == '1.03') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/8/81/Cleaner103.tar.gz' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner103tar.gz' );
 		} else if($version == '1.02') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c6/Cleaner102.tar.gz' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner102tar.gz' );
 		} else if($version == '1.01') {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/5/5f/Cleaner101.tar.gz' ); 
+			header( 'Location: https://califano.squarespace.com/s/Cleaner101tar.gz' );
 		} else {
-			header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Cleaner.tar.gz' ); 
+			header( 'Location:  https://califano.squarespace.com/s/Cleanertar.gz' );
 		}
     }
 } else if($swname == 'ARACNE') {
     if($platform == 'Windows') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/aracne2.exe' ); 
+        header( 'Location: https://califano.squarespace.com/s/aracne2.exe' );
     } else if($platform == 'Linux') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/aracne2' ); 
+        header( 'Location: https://califano.squarespace.com/s/aracne2' );
     } else if($platform == 'MacOSX') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/aracne2.macosx' ); 
+        header( 'Location: https://califano.squarespace.com/s/aracne2.macosx' );
+    } else if($platform == 'Source') {
+        if($language == 'Java') {
+            header( 'Location: https://califano.squarespace.com/s/ARACNE-javasrctar.gz' );
+        } else if($language == 'C++') {
+            header( 'Location: https://califano.squarespace.com/s/ARACNEsrctar.gz' );
+        }
+    } else if ($platform == 'all_GUI') {
+        header( 'Location: http://wiki.c2b2.columbia.edu/informatics/data/aracne.zip' );
     } else {
-      header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/aracne2.jar' ); 
+        header( 'Location: https://califano.squarespace.com/s/aracne2.jar' );
     }
-} else if($swname == 'ARACNE SOURCE') {
-    if($language == 'Java') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/ARACNE-java.src.tar.gz' ); 
-    } else if($language == 'C++') {
-        header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE2/ARACNE.src.tar.gz' ); 
-    }
-} else if($swname == 'ARACNE GUI') {
-header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/ARACNE/aracne.zip' ); 
+} else if($swname == 'DEMAND') {
+     	header( 'Location: https://califano.squarespace.com/s/DeMAND_0990tar.gz' );
 } else if($swname == 'HERMES') {
     if($version == '1'){
-	header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/images/c/c0/Hermes.zip' ); 
+	header( 'Location: https://califano.squarespace.com/s/Hermes.zip' ); 
     } else if ($version == '2'){
-    	header( 'Location: http://wiki.c2b2.columbia.edu/califanolab/download/HERMES/Hermes-v2.0.tar.gz' ); 
+    	header( 'Location: https://califano.squarespace.com/s/Hermes-v20tar.gz' ); 
     }
+} else if($swname == 'MARINA') {
+    header( 'Location: https://califano.squarespace.com/s/Marina_matlab-4.tar' );
 } else if($swname == 'geWorkbench') {
     if($platform == 'Windows_x64') {
         header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Windows_JRE7_x64.exe' );
