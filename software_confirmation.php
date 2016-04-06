@@ -10,7 +10,10 @@ $version = $submission->data[8]['value'][0];
 $language = $submission->data[9]['value'][0];
 $platform = $submission->data[10]['value'][0];
 $uni = '';
-
+if($swname == 'ARACNE_SOURCE') {
+  $swname = 'ARACNE';
+  $platform = 'Source';
+}
 if($swname == 'TEISER' || $swname == 'FIRE' || $swname == 'iPAGE' || $swname == 'FIRE-pro' || $swname == 'EVE') {
   $uni = 'st2744';
 } else if($swname == 'ARACNE' || $swname =='BCI' || $swname =='Biastools' || $swname == 'Cleaner' || $swname == 'DEMAND'
@@ -18,6 +21,8 @@ if($swname == 'TEISER' || $swname == 'FIRE' || $swname == 'iPAGE' || $swname == 
   $uni = 'ac2248';
 } else if($swname == 'geWorkbench') {
   $uni = 'af2202';
+} else {
+  $uni = 'ac2248';
 }
 
 // the returned value should be one
@@ -76,9 +81,9 @@ header( 'Location: https://califano.squarespace.com/s/Viper_0990tar.gz' );
 } else if($swname == 'ARACNE') {
     if($platform == 'Windows') {
         header( 'Location: https://califano.squarespace.com/s/aracne2.exe' );
-    } else if($platform == 'Linux') {
+    } else if($platform == 'GNU-Linux') {
         header( 'Location: https://califano.squarespace.com/s/aracne2' );
-    } else if($platform == 'MacOSX') {
+    } else if($platform == 'Mac-OSX') {
         header( 'Location: https://califano.squarespace.com/s/aracne2.macosx' );
     } else if($platform == 'Source') {
         if($language == 'Java') {
@@ -101,6 +106,12 @@ header( 'Location: https://califano.squarespace.com/s/Viper_0990tar.gz' );
     }
 } else if($swname == 'MARINA') {
     header( 'Location: https://califano.squarespace.com/s/Marina_matlab-4.tar' );
+} else if($swname == 'Bcell-U95av2-Interactome') {
+    header( 'Location: https://califano.squarespace.com/s/BcellNetwork-U95Av2.rtf' );
+} else if($swname == 'Bcell-U133p2-Interactome') {
+    header( 'Location: https://califano.squarespace.com/s/BCellNetwork-U133P2.rtf' );
+} else if($swname == 'BRCA-MCF7-Interactome') {
+    header( 'Location: https://califano.squarespace.com/s/BreastCancerMCF7-CMAP.rtf' );
 } else if($swname == 'geWorkbench') {
     if($platform == 'Windows_x64') {
         header( 'Location: https://cbiit-download.nci.nih.gov/geworkbench/releases/2.6.0/geWorkbench_v2.6.0_Windows_JRE7_x64.exe' );
