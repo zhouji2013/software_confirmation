@@ -106,6 +106,10 @@ header( 'Location: https://califano.squarespace.com/s/Viper_0990tar.gz' );
     }
 } else if($swname == 'MARINA') {
     header( 'Location: https://califano.squarespace.com/s/Marina_matlab-4.tar' );
+} else if($swname == 'TCGA-AML-TF') {
+    header( 'Location: http://wiki.c2b2.columbia.edu/informatics/data/laml_tcga_rnaseq_tf-regulon.txt' );
+} else if($swname == 'TCGA-AML-SIG') {
+    header( 'Location: http://wiki.c2b2.columbia.edu/informatics/data/laml_tcga_rnaseq_sig-regulon.txt' );
 } else if($swname == 'Bcell-U95av2-Interactome') {
     header( 'Location: https://califano.squarespace.com/s/BcellNetwork-U95Av2.rtf' );
 } else if($swname == 'Bcell-U133p2-Interactome') {
